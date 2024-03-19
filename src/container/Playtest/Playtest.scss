@@ -279,6 +279,10 @@
                     max-width: 30px; // adjust as needed
                     margin-right: 13px; // adjust as neededSW
                 }
+
+                @media screen and (max-width: 450px) {
+                    display: none;
+                }
             }
         }
 
