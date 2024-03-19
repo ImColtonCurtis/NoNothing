@@ -1,0 +1,187 @@
+.app__about {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: row;
+  align-items: center; // Align items vertically in the center
+  padding-left: 120px;
+  position: relative; // Make the container relative for absolute positioning of img-family
+
+  @media screen and (min-width: 2000px) {
+    padding-left: 250px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column; // Change to column layout on smaller screens
+    align-items: flex-start; // Align items vertically at the start
+  }
+}
+
+.app__about-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: flex-start; // Align items vertically at the start
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
+
+  width: 60%;
+  max-width: 600px; /* Adjust the value based on your design */
+  overflow: hidden; /* Prevent text from overflowing the container */
+
+  @media screen and (min-width: 2000px) {
+      //max-width: 850px; /* Adjust the value based on your design */
+  }
+
+  @media screen and (max-width: 1200px) {
+      max-width: 480px; /* Adjust the value based on your design */
+  }
+
+  @media screen and (max-width: 800px) {
+      max-width: 350px; /* Adjust the value based on your design */
+  }
+
+  @media screen and (max-width: 450px) {
+      max-width: 280px; /* Adjust the value based on your design */
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-texts {
+  font-size: 1.2rem;
+  color: var(--darkGrey-color);
+  //text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.45);
+  text-transform: uppercase;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.8rem;
+  }
+
+  @media screen and (max-width: 800px) {
+      font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+      font-size: 1.35rem;
+  }
+}
+
+.mainTitle-text {
+  font-size: 2.1rem;
+  color: var(--darkGray-color);
+  text-transform: uppercase;
+  white-space: normal;
+  font-weight: 800;
+  margin-top: 0.6rem; // Add spacing between headText and title
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 0.2rem; // Add spacing between logo and title
+  }
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.8rem;
+    margin-top: 0.51rem; // Add spacing between logo and title
+  }
+
+  @media screen and (max-width: 800px) {
+      font-size: 1.5rem;
+      margin-top: 0.42rem; // Add spacing between logo and title
+  }
+
+  @media screen and (max-width: 450px) {
+      font-size: 1.35rem;
+      margin-top: 0.42rem; // Add spacing between logo and title
+  }
+}
+
+.paragraph-text {
+  font-size: 1.05rem;
+  color: var(--darkGray-color);
+  white-space: normal;
+  margin-top: 0.55rem; // Add spacing between headText and title
+
+  @media screen and (min-width: 2000px) {
+    font-size: 1.05rem;
+    margin-top: 0.45rem; // Add spacing between logo and title
+  }
+
+  @media screen and (max-width: 1200px) {
+    font-size: 1.05rem;
+    margin-top: 0.5rem; // Add spacing between logo and title
+  }
+
+  @media screen and (max-width: 800px) {
+      font-size: 1.05rem;
+      margin-top: 0.5rem; // Add spacing between logo and title
+  }
+
+  @media screen and (max-width: 450px) {
+      font-size: 1.05rem;
+      margin-top: 0.5rem; // Add spacing between logo and title
+  }
+}
+
+
+.app__about-logo {
+  display: flex;
+  flex-direction: column; // Change to column layout for logo and family
+  align-items: flex-start; // Align to the bottom-right of the container
+  width: 50%; // Set the width to 50%
+  padding-left: 1.25rem;
+  position: relative; // Make the container relative for absolute positioning of img-family
+}
+
+.img-logo {
+  width: 40%;
+  z-index: 2; // Set a higher z-index for img-logo
+
+  @media screen and (min-width: 2000px) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 35%;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 35%;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 35%;
+  }
+}
+
+.img-family {
+  width: 50%;
+  position: absolute;
+  z-index: 1; // Set a lower z-index for img-family
+  right: 15rem; // Add left positioning
+
+  @media screen and (min-width: 2000px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 50%;
+  }
+}

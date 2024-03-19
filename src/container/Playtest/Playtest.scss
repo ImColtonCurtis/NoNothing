@@ -1,0 +1,419 @@
+@keyframes playtest-background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.app__playtest {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--darkGrey-color);
+    padding: 0rem 0rem 0rem;
+    position: relative;
+
+    .app__playtest-background {
+        position: fixed;
+    }
+    
+    .app__playtest-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      padding-top: 2.25rem;
+      margin-bottom: -1.5rem;
+
+      @media screen and (min-width: 2000px) {
+            padding-top: 3rem;
+            padding-bottom: 1.5rem;        
+            margin-bottom: -2rem;
+        }
+
+        @media screen and (max-width: 800px) {
+            padding-top: 3.35rem;
+            margin-bottom: -0.755rem;
+        }
+
+      .app__playtest-video-player {
+        width: 100%;
+        max-width: 850px;
+        overflow: hidden;
+
+        video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+      }
+    }
+  
+    .app__playtest-content-bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;        
+        padding-top: 0.4rem;
+
+        .app__playtest-content-1 {
+            width: 100%;
+            max-width: 850px;
+            padding: 0.5rem; /* Adjusted padding for a smaller gap */  
+            margin-top: -0.4rem;      
+            padding-top: 0.1rem;
+            padding-left: 0.8rem;
+            padding-bottom: 0rem;
+            border-radius: 0.75rem 0.75rem 0.25rem 0.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--offBlack-color);
+            box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+              
+            &:hover {
+                transform: scale(1.05);
+                z-index: 2;
+
+                @media screen and (min-width: 2000px) {
+                transform: scale(1.1);
+                }
+            }
+        }
+
+        .app__playtest-content-2 {
+            width: 100%;
+            max-width: 850px;
+            padding: 0.5rem; /* Adjusted padding for a smaller gap */        
+            padding-top: 0.2rem;
+            padding-left: 0.8rem;
+            padding-bottom: 0rem;
+            border-radius: 0.25rem;            
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--offBlack-color);
+            box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.5);  
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+              
+            &:hover {
+                transform: scale(1.0375);
+                z-index: 2;
+
+                @media screen and (min-width: 2000px) {
+                transform: scale(1.075);
+                }
+            }
+        }
+
+        .app__playtest-content-3 {
+            width: 100%;
+            max-width: 850px;
+            padding: 0.5rem; /* Adjusted padding for a smaller gap */        
+            padding-top: 0.2rem;
+            padding-left: 0.8rem;
+            padding-bottom: 0rem;
+            border-radius: 0.25rem 0.25rem 0.75rem 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--offBlack-color);
+            box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+              
+            &:hover {
+                transform: scale(1.025);
+                z-index: 2;
+
+                @media screen and (min-width: 2000px) {
+                transform: scale(1.05);
+                }
+            }
+        }
+
+        .app__playtest-section {
+            margin-bottom: 1.2rem;
+    
+            h1 {
+                font-size: 2.25rem;
+                margin-bottom: -0.9rem;
+                color: var(--white-color);
+                text-transform: uppercase;
+              }
+              
+              h1 span {
+                margin-left: -0.1rem;
+                font-size: 1.55rem;
+              }
+              
+              @media screen and (min-width: 2000px) {
+                h1 {
+                  font-size: 2.7rem;                  
+                  margin-bottom: -1.25rem;
+                }
+                h1 span {
+                    margin-left: -0.18rem;
+                    font-size: 1.75rem;
+                  }
+              }
+              
+              @media screen and (max-width: 450px) {
+                h1 {
+                  width: 60%;
+                  font-size: 1.48rem;
+                  margin-bottom: -0.5rem;
+                }
+                h1 span {
+                    margin-left: -0.075rem;
+                    font-size: 1.0rem;
+                  }
+            }
+
+            h4 {
+                font-size: 3.2rem;
+                margin-bottom: 0.35rem;
+                text-transform: uppercase;
+
+                animation: playtest-background-pan 2s linear infinite;
+                background: linear-gradient(
+                    to right,
+                    rgb(150,0,200),
+                    rgb(200, 0, 150),
+                    rgb(250, 0, 100),
+                    rgb(150, 0, 200)
+                    );
+                background-size: 200%;
+                -webkit-background-clip: text;
+                background-clip: text; /* Standard property for compatibility */
+                -webkit-text-fill-color: transparent;
+
+                @media screen and (min-width: 2000px) {
+                    font-size: 3.6rem;
+                    margin-bottom: 0.25rem;
+                }
+
+                @media screen and (max-width: 450px) { 
+                    font-size: 1.8rem;
+                    margin-bottom: 0.25rem;
+                }
+            }
+
+            p {
+                font-size: 1.05rem;
+                margin-bottom: 0.9rem;
+                color: var(--white-color);
+
+                @media screen and (min-width: 2000px) {
+                    font-size: 1.1rem;
+                }
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                margin-bottom: 0.7rem;
+                color: var(--white-color);          
+                text-transform: capitalize;
+            }
+
+            .app__playtest-section-paragraph{
+                width: 80%;
+
+                ul {
+                    list-style-type: none;
+                    padding: 0 0 0 20px;
+                    margin: 0;
+        
+                    li {
+                        font-size: 1.1rem;
+                        margin-bottom: 0.56rem;
+                        color: var(--white-color);
+            
+                        &:before {
+                        content: '\2022';
+                        color: lightgrey;
+                        display: inline-block;
+                        width: 1em;
+                        margin-left: -1em;
+                        margin-right: 0.5em;
+                        }
+                    }
+                }
+            }
+
+            .app__playtest-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(130, 130, 130, 0.8);
+                text-decoration: none; // Remove underline
+                color: var(--white-color);
+                border: none;                
+                border-radius: 0.25rem; // adjust as needed
+                padding: 10.5px; // adjust as needed
+                padding-left: 21px;
+                padding-right: 21px;
+                margin-left: 0.7rem;
+                margin-top: 0.8rem;
+                cursor: pointer;
+                font-size: 1.35rem; // adjust as needed
+                font-weight: 600;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+
+                transition: background-color 0.1s ease; // optional transition effect
+                backdrop-filter: blur(3px);
+
+                // Set a fixed width for the button
+                width: fit-content; // Adjust as needed
+
+                &:hover {
+                    background-color: rgba(175, 175, 175, 0.25);      
+                    backdrop-filter: blur(1px);
+                }
+
+                .button-logo {
+                    max-width: 30px; // adjust as needed
+                    margin-right: 13px; // adjust as neededSW
+                }
+            }
+        }
+
+        .app__playtest-faq {
+            margin-bottom: 1.2rem;
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: -0.05rem;
+                color: var(--white-color);           
+                text-transform: capitalize;
+            }
+
+            h5 {
+                font-size: 1.325rem;
+                margin-bottom: -0.325rem;
+                margin-top: 0.025rem;
+                padding-left: 0.3rem;
+                color: var(--white-color);           
+                text-transform: capitalize;
+            }
+
+            div {
+                width: 100%;
+
+                p {
+                font-size: 1.05rem;
+                margin-bottom: 1.1rem;
+                color: var(--white-color);
+                }
+            }
+
+            .app__playtest-faq-content {
+                width: 100%;
+
+                .app__playtest-faq-groups {
+                    display: flex;
+                    flex-direction: column;
+                    padding-left: 1rem;
+                    margin-left: -0.5rem;
+                    transition: all 0.3s ease-in-out;
+              
+                    &:hover {
+                      transform: scale(1.1);
+                      background-color: var(--offBlack-color);
+                      border-radius: 0.25rem;
+                      border: 1px solid rgba(255, 255, 255, 0.1);     
+                      box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.5);
+
+                      @media screen and (min-width: 2000px) {
+                        transform: scale(1.15);
+                        }
+                    }
+
+                    .app__playtest-faq-container {
+                        width: 80%;
+                        position: relative;
+
+                        h3 {
+                            position: relative;
+                            font-size: 1.1rem;
+                            margin-top: 0.75rem;
+                            margin-bottom: 0.8rem;
+                            color: var(--white-color);
+
+                            .faq-icon {
+                                margin-right: 0.8rem; /* Adjust the margin as needed */
+                                max-width: 27px; /* Adjust the size as needed */
+                                position: relative;
+                                top: 6px; /* Adjust to move the image down by 10 pixels */
+                            }
+                        }
+                        
+                        p {
+                            margin-bottom: 1.5rem; /* Adjust the margin between paragraphs */
+                        }
+                    }
+                }
+                .app__playtest-faq-line {
+                    width: 90%;
+                    height: 1px;
+                    background-color: lightgrey;
+                    margin-top: 0rem;
+                    margin-bottom: 0.5rem;
+                    margin-left: 0.6rem;
+                }
+            }
+        }
+    }
+  
+    @media screen and (max-width: 850px) {
+      .app__playtest-gif-player {
+        img {
+          width: 85vw;
+          max-width: none;
+        }
+      }
+    }
+
+    .bottom-tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: 1rem;            
+            margin-top: 1.25rem;
+            margin-bottom: -1.5rem;
+            font-weight: 400;
+            color: var(--white-color);
+            text-align: center; /* Add this line to center the text */
+
+            @media screen and (max-width: 450px) {
+                width: 80vw;
+                font-size: 0.8rem;                
+                margin-bottom: -2.5rem;
+            }
+        }
+    }
+
+    .form-overlay {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        z-index: 950;
+        backdrop-filter: blur(1.2px);
+        background: rgba(49, 49, 49, 0.8);
+        cursor: pointer;
+    }
+}
+
+body.active-modal {
+    overflow-y: hidden;
+}

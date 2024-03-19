@@ -1,0 +1,227 @@
+.app__contactForm {
+    position: fixed;
+    width: auto;
+    height: auto;
+    min-width: 380px;
+    max-height: 97svh;
+    max-width: 520px;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(14, 14, 14, 0.81);
+    backdrop-filter: blur(3px);
+
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0.25px 0.25px 6px rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    flex-direction: column;
+    overflow-y: auto;  
+    overflow-x: hidden;
+    
+    @media screen and (min-width: 450px) {
+      transform: translate(-50%, -50%) scale(1.1);
+      transform-origin: top center;
+    }
+
+    @media screen and (min-width: 800px) {
+      transform: translate(-50%, -50%) scale(1.2);
+      transform-origin: top center;
+    }
+      
+    @media screen and (min-width: 2000px) {
+      //max-width: 50.5%;
+      max-height: 97.8svh;
+    }
+  
+    @media screen and (max-width: 1000px) {
+      //max-width: 97.75%;
+      max-height: 97.7svh;
+    }
+
+    @media screen and (max-height: 450px) {
+      top: 0.3rem;
+      transform: translate(-50%, 0);
+    }
+  }    
+  
+  .app__contactForm-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .app__contactForm-content {
+      display: flex;
+      align-items: flex-start; // Center items vertically in the container        
+      justify-content: flex-start;      
+      position: relative;
+      padding: 3.25rem;
+      padding-bottom: 1.5rem;
+      padding-top: 0.1em;
+      z-index: 1;
+
+      @media screen and (max-width: 1000px) {
+        padding: 1.8rem;
+        padding-bottom: 1.5rem;
+        padding-top: 0.1em;
+      }
+
+      @media screen and (max-width: 450px) {
+        padding: 1.05rem;
+        padding-bottom: 1.2rem;
+        padding-top: 0.1em;
+      }
+
+      @media screen and (max-height: 450px) {
+        padding-bottom: 1.2rem;
+      }
+
+      // Add styles for Notify Me box
+      .app__contactForm-box {
+        margin-top: 0.5rem;
+        flex-direction: column;
+
+        h1 {
+          color: white;
+          margin-top: 0.3rem;
+          margin-bottom: 0.2rem;
+          margin-left: 0.3rem;
+          font-size: 1rem;
+
+          @media screen and (max-width: 450px) {
+            margin-bottom: 0.5rem;
+          }
+
+          @media screen and (max-height: 450px) {
+            margin-top: 1.2rem;
+          }
+        }
+
+        .custom-dropdown {
+          display: flex;
+          align-items: center; /* Center items vertically */
+          position: relative;
+          width: 100%;
+        }
+        
+        .custom-dropdown select {
+          width: 100%;
+          padding: 0.5rem;
+          color: white;
+          text-shadow: 0.2px 0.5px 4px rgba(0, 0, 0, 0.35);
+          opacity: 1;
+          font-size: 1rem;
+          font-weight: bold;
+          background-color: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(4px);
+
+          border: 2px solid white;
+          border-color: white;
+          outline: none;
+          font-family: var(--font-base);          
+          margin-bottom: 0.5rem;
+          appearance: none; /* Remove default arrow in some browsers */
+          border-radius: 0.25rem;
+        }
+
+        .form-dropdown-icon {
+          position: absolute;
+          right: 1rem; /* Adjust the distance from the right edge */
+          top: 50%;
+          transform: translateY(-50%);
+        
+          img {
+            width: 12px; /* Adjust the width of the triangle icon */
+            height: 100%;
+          }
+        }        
+
+        input {
+          width: 100%;
+          padding: 0.5rem;
+          margin-right: -7rem;
+          margin-bottom: 0.5rem;
+          color: white;
+          text-shadow: 0.2px 0.5px 4px rgba(0, 0, 0, 0.35);
+          opacity: 1;
+
+          font-size: 1rem;
+          font-weight: bold;
+          background: none;
+          backdrop-filter: blur(3.5px);
+
+          border: 2px solid white; // Replace with your desired border color
+          border-color: white;
+
+          border-radius: 0.25rem;
+
+          outline: none;
+          font-family: var(--font-base);          
+        }
+        .top-input {
+          border-radius: 0.75rem 0.75rem 0.25rem 0.25rem;
+        }
+
+        .bottom-field {
+          width: 100%;
+          border-radius: 0.25rem 0.25rem 0.75rem 0.75rem;
+          margin-bottom: 0.75rem;
+        }     
+
+        button {
+          margin-left: 0.3rem;
+          padding: 0.5rem 0.75rem;
+          background-color: rgba(0, 0, 0, 0.8);
+          backdrop-filter: blur(2px);
+
+          color: var(--white-color);
+          font-size: 0.9rem;
+          font-weight: bold;    
+          text-shadow: 0.2px 0.5px 4px rgba(0, 0, 0, 0.35);
+          outline: none; // Add this line to remove the outline            
+          border: 1px solid white; // Replace with your desired border color
+          cursor: not-allowed; // Default to not-allowed
+          transition: all 0.3s ease-in-out; // Smooth transition for background color
+          font-family: var(--font-base);
+          border-radius: 0.35rem;
+
+          &[data-valid="true"] {
+            cursor: pointer;
+          }
+
+          &:hover {
+            &[data-valid="true"] {
+              background-color: rgba(255, 0, 0, 0.75);
+            }
+          }
+        }
+      }
+
+      // Add styles for Submitted message
+      .form-submitted-message {
+        margin-top: 1rem;
+        color: var(--white-color);
+        text-shadow: 0.2px 0.5px 4px rgba(0, 0, 0, 0.75);
+        font-weight: bold;
+      }
+    }
+
+    .exit-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      background: none; /* Remove the background */
+      border: none; /* Remove the border */
+      z-index: 99; /* Ensure the exit button appears above other elements */
+      filter: drop-shadow(0.5px 0.5px 1.5px rgba(0, 0, 0, 0.7));
+
+      img {
+        width: 36px;
+        height: auto;
+      }
+    }
+  }
+  

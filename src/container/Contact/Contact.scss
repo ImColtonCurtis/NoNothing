@@ -1,0 +1,284 @@
+@keyframes support-background-pan {
+    from {
+        background-position: 200% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.app__contact {
+    flex: 1;
+    width: 100%;
+    height: 100%;    
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--darkGrey-color);
+    padding: 0rem 0rem 0rem;
+    position: relative;
+
+    .app__contact-background {
+        position: fixed;
+    }
+    
+    .app__contact-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      padding-top: 2.25rem;
+      margin-bottom: -1.5rem;
+
+      @media screen and (min-width: 2000px) {
+            padding-top: 3rem;
+            padding-bottom: 1.5rem;        
+            margin-bottom: -2rem;
+        }
+
+        @media screen and (max-width: 800px) {
+            padding-top: 3.35rem;
+            margin-bottom: -0.755rem;
+        }
+
+      .app__contact-video-player {
+        width: 100%;
+        max-width: 850px;
+        overflow: hidden;
+  
+        video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+      }
+    }
+  
+    .app__contact-content-bg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;        
+        padding-top: 0.4rem;
+
+        .app__contact-content-1 {
+            width: 100%;
+            max-width: 850px;
+            padding: 0.5rem; /* Adjusted padding for a smaller gap */        
+            padding-top: 0.1rem;
+            padding-left: 0.8rem;
+            padding-bottom: 0rem;            
+            margin-top: -0.4rem; 
+            border-radius: 0.75rem 0.75rem 0.25rem 0.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--offBlack-color);
+            box-shadow: 0.25rem 0.25rem 6px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+              
+            &:hover {
+                transform: scale(1.05);
+                z-index: 2;
+
+                @media screen and (min-width: 2000px) {
+                transform: scale(1.1);
+                }
+            }
+        }
+
+        .app__contact-section {
+            margin-bottom: 1.2rem;
+    
+            h1 {
+                font-size: 2.1rem;
+                margin-bottom: -0.85rem;
+                color: var(--white-color);
+                text-transform: uppercase;
+              }
+              
+              h1 span {
+                margin-left: -0.15rem;
+                font-size: 1.5rem;
+              }
+              
+              @media screen and (min-width: 2000px) {
+                h1 {
+                  font-size: 2.6rem;                  
+                  margin-bottom: -1.25rem;
+                }
+                h1 span {
+                    margin-left: -0.2rem;
+                    font-size: 1.7rem;
+                  }
+              }
+              
+              @media screen and (max-width: 450px) {
+                h1 {
+                  width: 60%;
+                  font-size: 1.18rem;
+                  margin-bottom: -0.5rem;
+                }
+                h1 span {
+                    margin-left: 0rem;
+                    font-size: 0.92rem;
+                  }
+            }
+
+            h4 {
+                font-size: 3rem;
+                margin-bottom: 0.35rem;
+                text-transform: uppercase;
+
+                animation: support-background-pan 4.5s linear infinite;
+                background: linear-gradient(
+                    to right,
+                    rgb(255, 10, 112),
+                    rgb(252, 255, 59),
+                    rgb(2, 252, 231),
+                    rgb(252, 255, 59),
+                    rgb(255, 10, 112),
+                    );
+                background-size: 200%;
+                -webkit-background-clip: text;
+                background-clip: text; /* Standard property for compatibility */
+                -webkit-text-fill-color: transparent;
+
+                @media screen and (min-width: 2000px) {
+                    font-size: 3.6rem;
+                }
+
+                @media screen and (max-width: 450px) { 
+                    font-size: 1.75rem;
+                    margin-bottom: 0.25rem;
+                }
+            }
+
+            p {
+                font-size: 1.05rem;
+                margin-bottom: 0.9rem;
+                color: var(--white-color);
+
+                @media screen and (min-width: 2000px) {
+                    font-size: 1.1rem;
+                }
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                margin-bottom: 0.7rem;
+                color: var(--white-color);          
+                text-transform: capitalize;
+            }
+
+            .app__contact-section-paragraph{
+                width: 80%;
+
+                ul {
+                    list-style-type: none;
+                    padding: 0 0 0 20px;
+                    margin: 0;
+        
+                    li {
+                        font-size: 1.1rem;
+                        margin-bottom: 0.56rem;
+                        color: var(--white-color);
+            
+                        &:before {
+                        content: '\2022';
+                        color: lightgrey;
+                        display: inline-block;
+                        width: 1em;
+                        margin-left: -1em;
+                        margin-right: 0.5em;
+                        }
+                    }
+                }
+            }
+
+            .app__contact-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(130, 130, 130, 0.8);
+                text-decoration: none; // Remove underline
+                color: var(--white-color);
+                border: none;                
+                border-radius: 0.25rem; // adjust as needed
+                padding: 10.5px; // adjust as needed
+                padding-left: 21px;
+                padding-right: 21px;
+                margin-left: 0.7rem;
+                margin-top: 0.8rem;
+                cursor: pointer;
+                font-size: 1.35rem; // adjust as needed
+                font-weight: 600;
+
+                transition: background-color 0.1s ease; // optional transition effect
+                backdrop-filter: blur(3px);
+
+                // Set a fixed width for the button
+                width: fit-content; // Adjust as needed
+
+                &:hover {
+                    background-color: rgba(175, 175, 175, 0.25);      
+                    backdrop-filter: blur(1px);
+                }
+
+                .button-logo {
+                    max-width: 30px; // adjust as needed
+                    margin-right: 13px; // adjust as needed
+                }
+            }
+        }
+    }
+  
+    @media screen and (max-width: 850px) {
+      .app__contact-gif-player {
+        img {
+          width: 85vw;
+          max-width: none;
+        }
+      }
+    }
+
+    .bottom-tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            font-size: 1rem;            
+            margin-top: 1.25rem;
+            margin-bottom: -1.5rem;
+            font-weight: 400;
+            color: var(--white-color);
+            text-align: center; /* Add this line to center the text */
+
+            @media screen and (max-width: 450px) {
+                width: 80vw;
+                font-size: 0.8rem;                
+                margin-bottom: -2.5rem;
+            }
+        }
+    }
+
+    .form-overlay {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        z-index: 950;
+        backdrop-filter: blur(1.2px);
+        background: rgba(49, 49, 49, 0.8);
+        cursor: pointer;
+    }
+}
+
+body.active-modal {
+    overflow-y: hidden;
+}
