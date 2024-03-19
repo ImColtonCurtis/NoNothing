@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/NoNothing/static/css/main.116161a3.css",
-    "main.js": "/NoNothing/static/js/main.62d10a89.js",
+    "main.js": "/NoNothing/static/js/main.c9f22dbe.js",
     "static/media/endlessGolfLCD.mp4": "/NoNothing/static/media/endlessGolfLCD.997e37067e12d9fe0525.mp4",
     "static/media/tubeRacersLCD.mp4": "/NoNothing/static/media/tubeRacersLCD.7a62268e9ee20df168be.mp4",
     "static/media/superDonkeyBallsLCD.mp4": "/NoNothing/static/media/superDonkeyBallsLCD.5620b790a81cbb9405a3.mp4",
@@ -15,33 +15,15 @@
     "static/media/tubeRacersLogo.png": "/NoNothing/static/media/tubeRacersLogo.1659fa8af3a43e60c72f.png",
     "static/media/superDonkeyBallsThumbnail.mp4": "/NoNothing/static/media/superDonkeyBallsThumbnail.9098da7ebed41a67b566.mp4",
     "static/media/supportHeader.mp4": "/NoNothing/static/media/supportHeader.1ca2311fcf7322ef8b3c.mp4",
-    "static/media/profile.png": "/NoNothing/static/media/profile.ee489764521abe34026b.png",
-    "static/media/spotify.png": "/NoNothing/static/media/spotify.2b5e9be1eb1ab501e7cd.png",
-    "static/media/nb.png": "/NoNothing/static/media/nb.98f3253e32cc67a4cb5e.png",
-    "static/media/asus.png": "/NoNothing/static/media/asus.514bc34955008a92e09f.png",
-    "static/media/adidas.png": "/NoNothing/static/media/adidas.83df8153294f9137d308.png",
     "static/media/logoOutline.png": "/NoNothing/static/media/logoOutline.aed58de77c4f2283f0b7.png",
-    "static/media/bolt.png": "/NoNothing/static/media/bolt.64e7d9d30ece478ef3a0.png",
-    "static/media/redux.png": "/NoNothing/static/media/redux.c9be37e0fece29c624b0.png",
     "static/media/logo.png": "/NoNothing/static/media/logo.7a91ace5a2e106139cce.png",
-    "static/media/sass.png": "/NoNothing/static/media/sass.36e863bfbcb25c109d00.png",
-    "static/media/node.png": "/NoNothing/static/media/node.8683d89cf78ffae3d1f7.png",
-    "static/media/cpp.png": "/NoNothing/static/media/cpp.9002a804bbfa0354d0b8.png",
-    "static/media/graphql.png": "/NoNothing/static/media/graphql.0372057049181c5de51a.png",
-    "static/media/amazon.png": "/NoNothing/static/media/amazon.0a8be1f53138b5c52456.png",
-    "static/media/mobile.png": "/NoNothing/static/media/mobile.145d9ce0157a56f8fcd8.png",
-    "static/media/email.png": "/NoNothing/static/media/email.37b9e890eea501421fbf.png",
-    "static/media/figma.png": "/NoNothing/static/media/figma.152e55329b6f1915967e.png",
-    "static/media/css.png": "/NoNothing/static/media/css.5721a3928fe43de6baf8.png",
-    "static/media/git.png": "/NoNothing/static/media/git.a54d3fa44e02f2f61e69.png",
-    "static/media/skype.png": "/NoNothing/static/media/skype.c8d7ee175da5b4c8a8ab.png",
     "index.html": "/NoNothing/index.html",
     "static/media/circle.svg": "/NoNothing/static/media/circle.134eeeb1e58895b892195fe8ed63bc9f.svg",
     "main.116161a3.css.map": "/NoNothing/static/css/main.116161a3.css.map",
-    "main.62d10a89.js.map": "/NoNothing/static/js/main.62d10a89.js.map"
+    "main.c9f22dbe.js.map": "/NoNothing/static/js/main.c9f22dbe.js.map"
   },
   "entrypoints": [
     "static/css/main.116161a3.css",
-    "static/js/main.62d10a89.js"
+    "static/js/main.c9f22dbe.js"
   ]
 }
