@@ -69,9 +69,9 @@ const Press = () => {
   };
 
   const games = [    
-    { title: 'Endless_Golf', vidURL: videos.endlessGolfThumbnail, tags: ['PC/Mac', 'Console', 'Mobile', 'All'], filePath: '/presskits/Endless_Golf.zip' },
-    { title: 'Super_Donkey_Balls', vidURL: videos.superDonleyBallsThumbnail, tags: ['PC/Mac', 'Console', 'All'], filePath: '/presskits/Super_Donkey_Balls.zip' },
-    { title: 'Tube_Racers', vidURL: videos.tubeRacersThumbnail, tags: ['PC/Mac', 'Console', 'Mobile', 'All'], filePath: '/presskits/Tube_Racers.zip' },
+    { title: 'Endless_Golf', vidURL: videos.endlessGolfThumbnail, tags: ['PC/Mac', 'Console', 'Mobile', 'All'], filePath: '/NoNothing/presskits/Endless_Golf.zip' },
+    { title: 'Super_Donkey_Balls', vidURL: videos.superDonleyBallsThumbnail, tags: ['PC/Mac', 'Console', 'All'], filePath: '/NoNothing/presskits/Super_Donkey_Balls.zip' },
+    { title: 'Tube_Racers', vidURL: videos.tubeRacersThumbnail, tags: ['PC/Mac', 'Console', 'Mobile', 'All'], filePath: '/NoNothing/presskits/Tube_Racers.zip' },
   ];
 
   const dropdownWidth = Math.max(...['Platforms', 'All', 'PC/Mac', 'Console', 'Mobile'].map(item => item.length)) * 10;
