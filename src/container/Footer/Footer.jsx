@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     <div className="app__footer app__flex">
       <div className="footer-links">
-        <Link to="/NoNothing/privacy-policy" className="footer-link">Privacy Policy</Link>
-        <Link to="/NoNothing/terms-of-use" className="footer-link">Terms of Use</Link>
+        <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+        <Link to="/terms-of-use" className="footer-link">Terms of Use</Link>
       </div>
       <div className="copyright">
         <p className="p-text">Copyright © 2024 No Nothing All rights reserved.</p>

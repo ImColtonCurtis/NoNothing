@@ -33,6 +33,18 @@ const Work = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
+    const handleKeyUp = (event) => {
+      if (modal && event.key === 'Escape') {
+        toggleModal();
+      }
+    };
+    document.addEventListener('keyup', handleKeyUp);
+    return () => {
+      document.removeEventListener('keyup', handleKeyUp);
+    };
+  }, [toggleModal]);
+
+  useEffect(() => {
     handleWorkFilter('Platforms');
 
     const handleClickOutside = (event) => {

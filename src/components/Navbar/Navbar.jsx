@@ -82,7 +82,7 @@ const Navbar = () => {
       <ul className="app__navbar-links">
         <li className="app__flex p-text">
           <div />
-          <Link to="/NoNothing" onClick={() => setActivePage('home')}>
+          <Link to="/" onClick={() => setActivePage('home')}>
             <img src={images.logo} alt="logo" className="app__navbar-logo" />
           </Link>
         </li>
@@ -91,7 +91,7 @@ const Navbar = () => {
             <div />
             {/* Replace <a> with <Link> */}
             <Link 
-              to={item === 'home' ? '/NoNothing' : `/NoNothing/${item.toLowerCase()}`}
+              to={item === 'home' ? '/' : `/${item.toLowerCase()}`}
               onClick={() => {
                 setActivePage(item);
               }}
@@ -126,7 +126,7 @@ const Navbar = () => {
               {['home', 'playtest', 'press', 'support', 'contact'].map((item, index) => (
                 <motion.li key={item} className={listClass}>
                   <Link
-                    to={item === 'home' ? '/NoNothing' : `/NoNothing/${item.toLowerCase()}`}
+                    to={item === 'home' ? '/' : `/${item.toLowerCase()}`}
                     onClick={() => {
                       setToggle(false);
                       setActivePage(item);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Footer, Header, About, Work, Playtest, PlaytestForm, Press, Support, SupportForm, Contact, ContactForm, Privacy, Terms, SuperDonkeyBallsInfo } from './container';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Footer, Header, About, Work, Playtest, PlaytestForm, Press, Support, SupportForm, Contact, ContactForm, Privacy, Terms, EndlessGolfInfo, SuperDonkeyBallsInfo, TubeRacersInfo } from './container';
 import { Navbar } from './components';
 import './App.scss';
 
@@ -43,21 +43,26 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/NoNothing" element={<HomePage toggleModal={toggleModal} modal={modal} toggleMoreInfoModal={toggleMoreInfoModal} moreInfoModal={moreInfoModal}/>} />
-          <Route path="/NoNothing/work" element={<Work toggleModal={toggleModal} modal={modal} toggleMoreInfoModal={toggleMoreInfoModal} moreInfoModal={moreInfoModal}/>} />
-          <Route path="/NoNothing/playtest" element={<Playtest />} />
-          <Route path="/NoNothing/playtest-form" element={<PlaytestForm />} />
-          <Route path="/NoNothing/press" element={<Press />} />
-          <Route path="/NoNothing/support" element={<Support />} />
-          <Route path="/NoNothing/support-form" element={<SupportForm />} />
-          <Route path="/NoNothing/contact" element={<Contact />} />
-          <Route path="/NoNothing/contact-form" element={<ContactForm />} />
+          <Route exact path="/" element={<HomePage toggleModal={toggleModal} modal={modal} toggleMoreInfoModal={toggleMoreInfoModal} moreInfoModal={moreInfoModal}/>} />
+          <Route path="/work" element={<Work toggleModal={toggleModal} modal={modal} toggleMoreInfoModal={toggleMoreInfoModal} moreInfoModal={moreInfoModal}/>} />
+          <Route path="/playtest" element={<Playtest />} />
+          <Route path="/playtest-form" element={<PlaytestForm />} />
+          <Route path="/press" element={<Press />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/support-form" element={<SupportForm />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-form" element={<ContactForm />} />
           
-          <Route path="/NoNothing/superdonkeyballs-info" element={<SuperDonkeyBallsInfo  toggleModal={toggleModal}/>} />
+          <Route path="/endlessGolf-info" element={<EndlessGolfInfo  toggleModal={toggleModal}/>} />          
+          <Route path="/superDonkeyBalls-info" element={<SuperDonkeyBallsInfo  toggleModal={toggleModal}/>} />          
+          <Route path="/tubeRacers-info" element={<TubeRacersInfo  toggleModal={toggleModal}/>} />
 
-          <Route path="/NoNothing/about" element={<About />} />
-          <Route path="/NoNothing/privacy-policy" element={<Privacy />} />          
-          <Route path="/NoNothing/terms-of-use" element={<Terms />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy-policy" element={<Privacy />} />          
+          <Route path="/terms-of-use" element={<Terms />} />
+
+          {/* Fallback route */}
+          <Route path="*" element={<HomePage toggleModal={toggleModal} modal={modal} toggleMoreInfoModal={toggleMoreInfoModal} moreInfoModal={moreInfoModal}/>} />
         </Routes>
         <Footer />
       </Router>
