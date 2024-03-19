@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { images, videos } from '../../constants';
 import { EndlessGolfInfo, SuperDonkeyBallsInfo, TubeRacersInfo } from '../../container';
@@ -28,7 +28,7 @@ const Work = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
         setFilterWork(works.filter((work) => work.tags.includes(item)));
       }
     }, 500);
-  }, [setSelectedPlatform, setShowDropdown, setAnimateCard, setFilterWork]);
+  }, []);
 
   const dropdownRef = useRef(null);
 
@@ -46,7 +46,7 @@ const Work = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [handleWorkFilter, dropdownRef]);
+  }, [handleWorkFilter]);
 
   const videoRefs = useRef({}); // Object to store video refs
 
@@ -80,20 +80,22 @@ const Work = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
     }, {});
   }, []); // Empty dependency array ensures this runs only once on mount
 
-  const toggleDropdown = () => {
+  const toggleDropdown = useCallback(() => {
     setShowDropdown((prevShowDropdown) => !prevShowDropdown);
-  };
+  }, []);
 
-  const handleItemClick = (work) => {
+  const handleItemClick = useCallback((work) => {
     setSelectedGame(work.title);
     toggleModal();
-  };
+  }, [toggleModal]);
 
-  const handleHover = (title) => {
+  const handleHover = useCallback((title) => {
     return modal && !moreInfoModal && selectedGame === title ? 'hover-active' : '';
-  };
+  }, [modal, moreInfoModal, selectedGame]);
 
-  const dropdownWidth = Math.max(...['Platforms', 'All', 'PC/Mac', 'Console', 'Mobile'].map((item) => item.length)) * 10;
+  const dropdownWidth = useMemo(() => {
+    return Math.max(...['Platforms', 'All', 'PC/Mac', 'Console', 'Mobile'].map((item) => item.length)) * 10;
+  }, []);
 
   return (
     <>

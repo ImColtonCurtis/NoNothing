@@ -73,7 +73,8 @@ const TubeRacersInfo = ({ toggleModal }) => {
 
   const platformLogos = [
     { id: 'pc', src: images.pcLogo, alt: 'PC Logo' },
-    { id: 'mac', src: images.appleLogo, alt: 'Mac Logo' },
+    { id: 'ios', src: images.appleLogo, alt: 'iOS Logo' },
+    { id: 'android', src: images.andoirdLogo, alt: 'Adnroid Logo' },
     { id: 'playstation', src: images.playstationLogo, alt: 'Playstation Logo' },
     { id: 'xbox', src: images.xboxLogo, alt: 'Xbox Logo' },
     { id: 'switch', src: images.switchLogo, alt: 'Switch Logo' },

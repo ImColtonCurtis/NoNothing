@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { images, videos } from '../../constants';
 import './SuperDonkeyBallsInfo.scss';
@@ -17,63 +17,11 @@ const gameInfo = [
 
 const EndlessGolfInfo = ({ toggleModal }) => {
   const videoSource = gameInfo[0];
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setSubmitted] = useState(false);
-  const [isValidEmail, setValidEmail] = useState(true); // New state for email validation
-
-  useEffect(() => {
-    // Check sessionStorage to see if the user has submitted an email
-    const storedSubmittedStatus = sessionStorage.getItem('isSubmitted');
-    if (storedSubmittedStatus) {
-      setSubmitted(true);
-    }
-  }, []);
-
-  const handleSubmit = () => {
-    // Perform email validation
-    const isValid = validateEmail(email);
-
-    if (isValid) {
-      // For simplicity, let's assume a valid email for now
-      setSubmitted(true);
-      setValidEmail(true);
-
-      // Store the submitted status in sessionStorage
-      sessionStorage.setItem('isSubmitted', 'true');
-    } else {
-      setValidEmail(false);
-      // You can display an error message or take other actions
-    }
-  };
-
-  const validateEmail = (email) => {
-    // Basic email validation (contains '@' symbol and '.')
-    if (!email.includes('@') || !email.includes('.')) {
-      return false;
-    }
-  
-    // Check for a valid position of '@'
-    if (email.indexOf('@') <= 0) {
-      return false;
-    }
-  
-    // Check for consecutive dots
-    if (/(\.{2,})/.test(email)) {
-      return false;
-    }
-  
-    // Check if the domain has at least one '.' after '@'
-    const domainParts = email.split('@')[1].split('.');
-    if (domainParts.length < 2) {
-      return false;
-    }
-  
-    return true;
-  };
 
   const platformLogos = [
     { id: 'pc', src: images.pcLogo, alt: 'PC Logo' },
-    { id: 'mac', src: images.appleLogo, alt: 'Mac Logo' },
+    { id: 'ios', src: images.appleLogo, alt: 'iOS Logo' },    
+    { id: 'android', src: images.andoirdLogo, alt: 'Adnroid Logo' },
     { id: 'playstation', src: images.playstationLogo, alt: 'Playstation Logo' },
     { id: 'xbox', src: images.xboxLogo, alt: 'Xbox Logo' },
     { id: 'switch', src: images.switchLogo, alt: 'Switch Logo' },

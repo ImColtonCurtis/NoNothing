@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { AppWrap } from '../../wrapper';
 import { images, videos } from '../../constants';
 import { EndlessGolfInfo, SuperDonkeyBallsInfo, TubeRacersInfo } from '../../container';
@@ -34,15 +34,16 @@ const gameVideos = shuffleArray([
     title: 'Tube Racers',    
     logo: images.tubeRacersLogo,
     subtitles: ['Coming soon!', 'Almost ready!', 'Available soon!'],
-    shortDescription: 'Survive the cource and battle against players from across the globe in this retro-style space racing game!',
+    shortDescription: 'Survive the course and battle against players from across the globe in this retro-style space racing game!',
     vidURL: videos.tubeRacersLCD,
   },
 ]);
 
-const Header = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
+const Header = (props) => {
+  const { toggleModal, modal, toggleMoreInfoModal, moreInfoModal } = props;
+
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [nextVideoReady, setNextVideoReady] = useState(false);
-  const [currentSubtitle, setCurrentSubtitle] = useState('');
   const [fadeInWhiteScreen, setFadeInWhiteScreen] = useState(false);
   const videoRef = useRef(null);
   const cleanupRef = useRef(() => {});
@@ -53,13 +54,9 @@ const Header = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
     // Log the received props when the component mounts
     console.log('Header component mounted with props:', { toggleModal, modal, toggleMoreInfoModal, moreInfoModal });
 
-    // ... existing code ...
-  }, [toggleModal, modal, toggleMoreInfoModal, moreInfoModal]);
-
-  useEffect(() => {
     // Set scroll position to the top of the page when the component mounts
     window.scrollTo(0, 0);
-  }, []);
+  }, [toggleModal, modal, toggleMoreInfoModal, moreInfoModal]);
 
   const handleVideoEnd = useCallback(() => {
     // Reset the current video to the beginning
@@ -82,33 +79,18 @@ const Header = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
     const currentVideoRef = videoRef.current;
     currentVideoRef.addEventListener('ended', handleVideoEnd);
 
-    // Assign the cleanup function to the ref
-    cleanupRef.current = () => {
-      currentVideoRef.removeEventListener('ended', handleVideoEnd);
-    };
-
-    // Cleanup event listener on component unmount
-    return () => {
-      // Execute the cleanup function from the ref
-      cleanupRef.current();
-    };
-  }, [currentVideoIndex, handleVideoEnd]);
-
-  useEffect(() => {
     // Start preparing the next video when the current video starts
-    const currentVideoRef = videoRef.current;
     const handlePlay = () => {
       setNextVideoReady(true);
     };
-
-    // Add event listener for video play
     currentVideoRef.addEventListener('play', handlePlay);
 
-    // Cleanup event listener on component unmount
     return () => {
+      // Cleanup event listeners
+      currentVideoRef.removeEventListener('ended', handleVideoEnd);
       currentVideoRef.removeEventListener('play', handlePlay);
     };
-  }, [currentVideoIndex]);
+  }, [currentVideoIndex, handleVideoEnd]);
 
   useEffect(() => {
     // Preload the next video
@@ -121,12 +103,10 @@ const Header = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
       nextVideo.remove();
     };
 
-    // Assign the cleanup function to the ref
     cleanupRef.current = () => {
       cleanupNextVideo();
     };
 
-    // Cleanup the audio element on component unmount
     return () => {
       cleanupRef.current();
     };
@@ -150,16 +130,15 @@ const Header = ({ toggleModal, modal, toggleMoreInfoModal, moreInfoModal }) => {
   
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [nextVideoReady, fadeInWhiteScreen]);
-  
 
   // Dynamically set the video source and subtitle based on the current video index
   const currentVideo = gameVideos[currentVideoIndex];
   const videoSource = currentVideo.vidURL;
 
-  useEffect(() => {
+  const currentSubtitle = useMemo(() => {
     // Randomly select a subtitle for the current video
     const randomSubtitleIndex = Math.floor(Math.random() * currentVideo.subtitles.length);
-    setCurrentSubtitle(currentVideo.subtitles[randomSubtitleIndex]);
+    return currentVideo.subtitles[randomSubtitleIndex];
   }, [currentVideoIndex, currentVideo.subtitles]);
 
   const videoContentRef = useRef(null);
