@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/NoNothing/static/css/main.116161a3.css",
+    "main.css": "/NoNothing/static/css/main.6e4f944e.css",
     "main.js": "/NoNothing/static/js/main.5ca586a1.js",
     "static/media/endlessGolfLCD.mp4": "/NoNothing/static/media/endlessGolfLCD.997e37067e12d9fe0525.mp4",
     "static/media/tubeRacersLCD.mp4": "/NoNothing/static/media/tubeRacersLCD.7a62268e9ee20df168be.mp4",
@@ -19,11 +19,11 @@
     "static/media/logo.png": "/NoNothing/static/media/logo.7a91ace5a2e106139cce.png",
     "index.html": "/NoNothing/index.html",
     "static/media/circle.svg": "/NoNothing/static/media/circle.134eeeb1e58895b892195fe8ed63bc9f.svg",
-    "main.116161a3.css.map": "/NoNothing/static/css/main.116161a3.css.map",
+    "main.6e4f944e.css.map": "/NoNothing/static/css/main.6e4f944e.css.map",
     "main.5ca586a1.js.map": "/NoNothing/static/js/main.5ca586a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.116161a3.css",
+    "static/css/main.6e4f944e.css",
     "static/js/main.5ca586a1.js"
   ]
 }
